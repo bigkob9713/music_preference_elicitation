@@ -1,0 +1,20 @@
+{
+  "seed": 7,
+  "artifact_dir": "artifacts/toy_major_minor_stochastic_two_factor",
+  "user": {
+    "type": "stochastic",
+    "major_utility": 2.1972245773362196,
+    "minor_utility": 0.0,
+    "tempo_weight": 0.4
+  },
+  "data": {
+    "train_pairs": 400,
+    "test_pairs": 200,
+    "rerank_sets": 100,
+    "candidates_per_set": 6
+  },
+  "model": {
+    "learning_rate": 0.1,
+    "epochs": 60
+  }
+}

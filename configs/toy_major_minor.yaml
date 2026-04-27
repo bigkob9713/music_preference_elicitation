@@ -1,0 +1,17 @@
+{
+  "seed": 7,
+  "artifact_dir": "artifacts/toy_major_minor",
+  "user": {
+    "type": "deterministic"
+  },
+  "data": {
+    "train_pairs": 400,
+    "test_pairs": 200,
+    "rerank_sets": 100,
+    "candidates_per_set": 6
+  },
+  "model": {
+    "learning_rate": 0.1,
+    "epochs": 60
+  }
+}

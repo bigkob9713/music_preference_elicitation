@@ -1,0 +1,20 @@
+{
+  "seed": 7,
+  "artifact_dir": "artifacts/muqeval_bridge_small",
+  "manifest_path": "/ABSOLUTE/PATH/TO/muqeval_bridge/manifests/muqeval_bridge_small.jsonl",
+  "expected_num_sets": 1,
+  "expected_candidates_per_set": 6,
+  "score_key": "MI",
+  "scorer": {
+    "name": "muqeval",
+    "muqeval_repo_dir": "/opt/MuQ-Eval",
+    "hf_repo_id": "zhudi2825/MuQ-Eval-A1",
+    "base_config_filename": "base.yaml",
+    "config_filename": "config.yaml",
+    "model_filename": "model_state_dict.pt",
+    "sample_rate": 24000,
+    "max_duration": 10.0,
+    "device": "auto",
+    "hf_cache_dir": "/ABSOLUTE/PATH/TO/muqeval_bridge/hf_cache"
+  }
+}

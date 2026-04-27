@@ -1,0 +1,28 @@
+# Python cache and build outputs
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Packaging metadata
+*.egg-info/
+build/
+dist/
+
+# Experiment artifacts
+artifacts/
+logs/
+
+# Local editor/system files
+.DS_Store
+
+docs/
+
+server_probe.txt
+
+server_probe.sh

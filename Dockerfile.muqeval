@@ -1,0 +1,20 @@
+FROM pytorch/pytorch:2.4.1-cuda12.4-cudnn9-runtime
+
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV MUQEVAL_REPO_DIR=/opt/MuQ-Eval
+
+WORKDIR /workspace
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends git ffmpeg libsndfile1 \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN git clone --depth 1 https://github.com/dgtql/MuQ-Eval.git "${MUQEVAL_REPO_DIR}" \
+    && python -m pip install --no-cache-dir -r "${MUQEVAL_REPO_DIR}/requirements.txt" \
+    && python -m pip install --no-cache-dir huggingface_hub omegaconf muq
+
+COPY configs/muqeval_bridge_small.yaml ./configs/muqeval_bridge_small.yaml
+COPY scripts/run_muqeval_bridge.py ./scripts/run_muqeval_bridge.py
+
+CMD ["python", "scripts/run_muqeval_bridge.py", "--config", "configs/muqeval_bridge_small.yaml"]
